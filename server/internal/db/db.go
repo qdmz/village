@@ -51,11 +51,11 @@ func Init() error {
 }
 
 func GetSetting(key, def string) string {
-	var s model.Setting
-	if err := DB.Where("`key` = ?", key).First(&s).Error; err != nil {
+	var list []model.Setting
+	if err := DB.Where("`key` = ?", key).Limit(1).Find(&list).Error; err != nil || len(list) == 0 {
 		return def
 	}
-	return s.Value
+	return list[0].Value
 }
 
 func SetSetting(key, value string) error {

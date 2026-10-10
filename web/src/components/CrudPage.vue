@@ -243,7 +243,7 @@ async function openDetail(row) {
 const fileInput = ref()
 async function onExport(fmt) {
   exporting.value = true
-  try { await exportList(cfg.api, params(), cfg.exportTitle || cfg.title, fmt) } catch { /* */ } finally { exporting.value = false }
+  try { await exportList(cfg.api, params(), cfg.exportTitle || cfg.title, fmt); ElMessage.success('已导出，请查看浏览器下载') } catch { /* */ } finally { exporting.value = false }
 }
 function onImport(cmd) {
   if (cmd === 'tpl') downloadTemplate(cfg.title, cfg.importable.headers, cfg.importable.sample)
