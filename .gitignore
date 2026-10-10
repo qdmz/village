@@ -1,0 +1,7 @@
+web/node_modules
+web/dist
+server/data
+server/config.yaml
+server/village-mgmt
+dist/
+*.db

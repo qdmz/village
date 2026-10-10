@@ -1,0 +1,17 @@
+server:
+  addr: "127.0.0.1:8095"   # 监听地址
+  static_dir: ""           # 留空=使用内嵌前端；也可指向 web/dist
+  upload_dir: "./data/uploads"
+  max_upload_mb: 5
+database:
+  driver: "sqlite"         # sqlite（零配置） 或 mysql
+  dsn: "./data/village.db"
+  # MySQL/MariaDB 示例：
+  # driver: "mysql"
+  # dsn: "village:密码@tcp(127.0.0.1:3306)/village?charset=utf8mb4&parseTime=True&loc=Local"
+jwt:
+  secret: ""               # 留空自动生成并保存在数据库
+  expire_hours: 72
+seed:
+  demo: true               # 首次启动写入演示数据
+  admin_password: ""       # 留空则随机生成，打印在启动日志中

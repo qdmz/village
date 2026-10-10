@@ -1,0 +1,18 @@
+[Unit]
+Description=乡村振兴村居日常工作管理系统 (village-mgmt)
+After=network.target mariadb.service mysql.service
+
+[Service]
+Type=simple
+User=village
+Group=village
+WorkingDirectory=/opt/village-mgmt
+ExecStart=/opt/village-mgmt/village-mgmt -c /opt/village-mgmt/config.yaml
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=full
+ReadWritePaths=/opt/village-mgmt/data
+
+[Install]
+WantedBy=multi-user.target
