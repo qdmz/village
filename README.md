@@ -7,7 +7,9 @@
 - 数据库：SQLite（纯 Go 驱动 glebarez/sqlite，`CGO_ENABLED=0`，零配置）或 MySQL / MariaDB
 - 部署：单个二进制文件，内嵌前端，同时提供 `/api` 接口
 
-当前版本：见 `VERSION`（v0.1.0）。
+当前版本：见 `VERSION`（v0.1.1）。
+
+在线演示：<https://village-demo-qdmz.style.dev>（临时演示环境，账号请联系作者）
 
 ## 功能模块
 
